@@ -21,6 +21,7 @@ namespace MedicationReminders
             list.First();
 
             medicationListView.ItemsSource = list;
+            medicationListView.SelectionMode = ListViewSelectionMode.None;
         }
 
         private void addToolBarButton_Clicked(object sender, EventArgs e)

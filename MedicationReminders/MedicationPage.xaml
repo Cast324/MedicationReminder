@@ -6,6 +6,12 @@
         <StackLayout>
             <Label Margin="0,10" Text="Upcomming Medications:" 
                 HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Medications:" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Date/Time:" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
 
             <ListView x:Name="medicationListView"
                       HorizontalOptions="FillAndExpand">
@@ -14,16 +20,14 @@
                         <ViewCell>
                             <Grid Margin="15, 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="90*"/>
-                                    <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="50*"/>
+                                    <ColumnDefinition Width="30*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Text="{Binding}" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                <Label Grid.Column="1" Text="10/12" VerticalOptions="Center" />
-                                <Label Grid.Column="2" Text="8am" VerticalOptions="Center" />
+                                <Label Text="This is a test ot see what" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Grid.Column="1" Text="10/12 8am" HorizontalOptions="Center" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
