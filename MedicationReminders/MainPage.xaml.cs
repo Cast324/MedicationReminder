@@ -14,5 +14,21 @@ namespace MedicationReminders
         {
             InitializeComponent();
         }
+
+        private void loginButton_Clicked(object sender, EventArgs e)
+        {
+            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (isEmailEmpty || isPasswordEmpty)
+            {
+                // Do not login!
+            }
+            else
+            {
+                // Login!
+                Navigation.PushAsync(new HomePage());
+            }
+        }
     }
 }
