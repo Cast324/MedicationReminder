@@ -21,6 +21,7 @@ namespace MedicationReminders
 
         private void addToolBarButton_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new AddMedicationPage());
 
         }
     }

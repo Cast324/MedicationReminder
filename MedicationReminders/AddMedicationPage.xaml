@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MedicationReminders.AddMedicationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="medicationEntry" Placeholder="Enter name of Medication"/>
+            <Grid Margin="10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Date:" HorizontalOptions="StartAndExpand"/>
+                <Label Grid.Column="1" Text="Time:" HorizontalOptions="StartAndExpand"/>
+                <DatePicker Grid.Row="1" />
+                <TimePicker Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
