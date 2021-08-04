@@ -26,7 +26,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Text="This is a test ot see what" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Grid.Column="1" Text="10/12 8am" HorizontalOptions="Center" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>

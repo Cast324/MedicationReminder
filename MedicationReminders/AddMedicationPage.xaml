@@ -17,9 +17,11 @@
                 </Grid.RowDefinitions>
                 <Label Text="Date:" HorizontalOptions="StartAndExpand"/>
                 <Label Grid.Column="1" Text="Time:" HorizontalOptions="StartAndExpand"/>
-                <DatePicker Grid.Row="1" />
-                <TimePicker Grid.Row="1" Grid.Column="1"/>
+                <DatePicker x:Name="datePicker" Grid.Row="1" />
+                <TimePicker x:Name="timePicker" Grid.Row="1" Grid.Column="1"/>
             </Grid>
+            <Picker x:Name="frequencyPicker" Title="Frequency"/>
+            <Button x:Name="saveButton" Text="Save" Clicked="saveButton_Clicked"/>
         </StackLayout>
         
     </ContentPage.Content>
