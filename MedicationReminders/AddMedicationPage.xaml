@@ -4,9 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MedicationReminders.AddMedicationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10,0">
             <Entry x:Name="medicationEntry" Placeholder="Enter name of Medication"/>
-            <Grid Margin="10,0">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="50*" />

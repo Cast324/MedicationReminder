@@ -27,7 +27,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Grid.Column="1" Text="10/12 8am" HorizontalOptions="Center" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding DateTime}" HorizontalOptions="Center" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

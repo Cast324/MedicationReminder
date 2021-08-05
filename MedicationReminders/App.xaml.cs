@@ -11,15 +11,17 @@ namespace MedicationReminders
         public App()
         {
             InitializeComponent();
+            DependencyService.Get<INotificationManager>().Initialize();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new HomePage());
         }
 
         public App(string databaseLocation)
         {
             InitializeComponent();
+            DependencyService.Get<INotificationManager>().Initialize();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new HomePage());
 
             DatabaseLocation = databaseLocation;
         }

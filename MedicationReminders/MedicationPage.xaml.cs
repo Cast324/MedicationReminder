@@ -13,16 +13,19 @@ namespace MedicationReminders
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MedicationPage : ContentPage
     {
+        INotificationManager notificationManager;
+        int notificationNumber = 0;
         public MedicationPage()
         {
             InitializeComponent();
-            //List<string> list = new List<string>();
-            //list.Add("Testing");
-            //list.Add("Maybe");
-            //list.First();
-
-            //medicationListView.ItemsSource = list;
             medicationListView.SelectionMode = ListViewSelectionMode.None;
+            notificationManager = DependencyService.Get<INotificationManager>();
+            notificationManager.NotificationReceived += (sender, eventArgs) =>
+            {
+                var evtData = (NotificationEventArgs)eventArgs;
+                ShowNotification(evtData.Title, evtData.Message);
+            };
+
         }
 
         protected override void OnAppearing()
@@ -35,7 +38,18 @@ namespace MedicationReminders
                 var posts = conn.Table<Medication>().ToList();
 
                 medicationListView.ItemsSource = posts;
+
             }
+
+            notificationNumber++;
+            string title = $"Local Notification #{notificationNumber}";
+            string message = $"You have now received {notificationNumber} notifications!";
+            notificationManager.SendNotification(title, message, DateTime.Now.AddSeconds(10));
+        }
+
+        void ShowNotification(string title, string message)
+        {
+           // Show Notification
         }
 
         private void addToolBarButton_Clicked(object sender, EventArgs e)

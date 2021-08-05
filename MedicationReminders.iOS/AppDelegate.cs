@@ -5,6 +5,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace MedicationReminders.iOS
 {
@@ -24,6 +25,8 @@ namespace MedicationReminders.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            UNUserNotificationCenter.Current.Delegate = new iOSNotificationReceiver();
 
             string dbName = "travel_db.sqlite";
             string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"..","Library");

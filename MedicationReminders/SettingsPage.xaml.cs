@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MedicationReminders.Model;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,15 @@ namespace MedicationReminders
         public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        private void deleteAllButton_Clicked(object sender, EventArgs e)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.DeleteAll<Medication>();
+
+            }
         }
     }
 }
