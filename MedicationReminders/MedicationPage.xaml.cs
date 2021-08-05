@@ -14,7 +14,6 @@ namespace MedicationReminders
     public partial class MedicationPage : ContentPage
     {
         INotificationManager notificationManager;
-        int notificationNumber = 0;
         public MedicationPage()
         {
             InitializeComponent();
@@ -36,15 +35,11 @@ namespace MedicationReminders
             {
                 conn.CreateTable<Medication>();
                 var posts = conn.Table<Medication>().ToList();
+                var sortedList = posts.OrderBy(o => o.DateTime).ToList();
 
-                medicationListView.ItemsSource = posts;
+                medicationListView.ItemsSource = sortedList;
 
             }
-
-            notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message, DateTime.Now.AddSeconds(10));
         }
 
         void ShowNotification(string title, string message)

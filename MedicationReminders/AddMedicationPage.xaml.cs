@@ -24,6 +24,7 @@ namespace MedicationReminders
             var timeFromInput = DateTime.ParseExact(time, "HH:mm:ss", null, DateTimeStyles.None);
             var timeFormated = timeFromInput.ToString("h:mm tt");
             var datetime = date + " " + timeFormated;
+            DateTime notificationDate = datePicker.Date + timePicker.Time;
 
             Medication newMed = new Medication()
             {
@@ -41,7 +42,8 @@ namespace MedicationReminders
                 if (rowsAffected > 0)
                 {
                     medicationEntry.Text = string.Empty;
-                    DisplayAlert("Success", "Med saved", "Ok");
+                    INotificationManager notificationManager = DependencyService.Get<INotificationManager>();
+                    notificationManager.SendNotification("Medication Reminder:", "Time to take " + medicationEntry.Text.ToString() ,notificationDate);
                     Navigation.PopAsync();
                 }
                 else
