@@ -20,5 +20,7 @@ namespace MedicationReminders.Model
 
         public int Dosage { get; set; }
 
+        public bool Confirmed { get; set; }
+
     }
 }

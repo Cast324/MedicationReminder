@@ -4,10 +4,7 @@
              x:Class="MedicationReminders.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="deleteAllButton" Text="Delete All" Clicked="deleteAllButton_Clicked"/>
+            <Button x:Name="deleteAllButton" Text="Delete All Medication Reminders" Clicked="deleteAllButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

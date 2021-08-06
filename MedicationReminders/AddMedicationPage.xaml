@@ -20,6 +20,7 @@
                 <DatePicker x:Name="datePicker" Grid.Row="1" />
                 <TimePicker x:Name="timePicker" Grid.Row="1" Grid.Column="1"/>
             </Grid>
+            <Label Text="Frequency:"/>
             <Picker x:Name="frequencyPicker" Title="Frequency"/>
             <Button x:Name="saveButton" Text="Save" Clicked="saveButton_Clicked"/>
         </StackLayout>
